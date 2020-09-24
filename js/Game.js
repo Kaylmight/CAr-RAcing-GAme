@@ -32,11 +32,16 @@ getGameState()
         }
 
         cars1 = createSprite(100, 200, 100, 100)
+        cars1.addImage("gaddi", car1)
         cars2 = createSprite(300, 200, 100, 100)
+        cars2.addImage("gaddi2", car2)
         cars3 = createSprite(500, 200, 100, 100)
+        cars3.addImage("gaddi3", car3)
         cars4 = createSprite(700, 200, 100, 100)
+        cars4.addImage("gaddi4", car4)
 
         carArray = [cars1, cars2, cars3, cars4]
+
     }
 
     play()
@@ -48,8 +53,13 @@ getGameState()
 
         if(allPlayer != undefined)
         {
+
+            background("#c68767")
+
+            image(track, 0, -displayHeight*4, displayWidth, displayHeight*5) 
+
             var yPos = 0;
-            var xPos = 0;
+            var xPos = 175;
             var index = 0;
 
             for(var i in allPlayer)
