@@ -88,8 +88,20 @@ getGameState()
         {
             player.distance += 50
             player.updatePlayer()
+            console.log(player.distance);
+        }
+
+        if(player.distance >= 3800)
+        {
+            gameState = 2
+            this.updateGameState(gameState)
         }
             drawSprites();
+        }
+
+        end()
+        {
+            alert("YOU ARE BEEN BANNED")
         }
 
 }

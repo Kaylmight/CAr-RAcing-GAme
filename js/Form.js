@@ -6,6 +6,7 @@ class Form
         this.input = createInput("ENTER YUR NAME");
         this.button = createButton("play");
         this.greeting = createElement("h1")
+        this.reset = createButton("RESET")
     }
 
     display()
@@ -32,6 +33,14 @@ class Form
         this.greeting.position(displayWidth/2, displayHeight/2)
 
         })
+
+        this.reset.mousePressed(() =>{
+            game.updateGameState(0);
+            player.updatePlayerCount(0);
+            database.ref("/").child("players").remove()
+        }
+            
+        )
     }
 
     hide()
