@@ -7,6 +7,8 @@ var carArray = [];
 
 var car1, car2, car3, car4, ground, track
 
+var ranking = 0
+
 function preload()
 {
 car1 = loadImage("Images/car1.png")

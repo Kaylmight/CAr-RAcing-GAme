@@ -19,6 +19,7 @@ class Form
 
         
         this.button.position(displayWidth/2 + 200, displayHeight/2)
+        
         this.button.mousePressed(()=>{
             this.input.hide()
             this.button.hide()
@@ -38,6 +39,7 @@ class Form
             game.updateGameState(0);
             player.updatePlayerCount(0);
             database.ref("/").child("players").remove()
+            player.updateCarRank(0);
         }
             
         )

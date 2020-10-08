@@ -5,6 +5,7 @@ class Player
         this.playerName = null; 
         this.distance = 0;
         this.playerPos = null;
+        this.rank = 0;
     }
 
     getPlayerCount()
@@ -39,5 +40,21 @@ class Player
              allPlayer = data.val()
          })
       
+    }
+
+    static getCarRank()
+    {
+        database.ref("carRank").on("value", (data) => 
+        {
+            ranking = data.val()
+        })       
+    }
+
+    updateCarRank(ranking)
+    {
+        database.ref("/").update
+        ({
+            carRank:ranking
+        })
     }
 }

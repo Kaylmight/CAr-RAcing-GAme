@@ -49,6 +49,8 @@ getGameState()
         form.hide()
         Player.getAllPlayerInfo()
 
+        Player.getCarRank()
+
         text("STARTED", 200, 300)
 
         if(allPlayer != undefined)
@@ -76,6 +78,9 @@ getGameState()
                    carArray[index-1].shapeColor = "red"
                    camera.position.x = displayWidth/2
                    camera.position.y = carArray[index-1].y
+                   fill(0)
+                   ellipse(xPos, yPos, 80, 80)
+                   
                 }
                 else
                 {
@@ -94,6 +99,9 @@ getGameState()
         if(player.distance >= 3800)
         {
             gameState = 2
+            ranking = ranking+1
+            player.updateCarRank(ranking)
+            player.rank = ranking
             this.updateGameState(gameState)
         }
             drawSprites();
@@ -101,7 +109,7 @@ getGameState()
 
         end()
         {
-            alert("YOU ARE BEEN BANNED")
+            alert("YOU ARE BEEN BANNED" + player.rank)
         }
 
 }
